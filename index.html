@@ -754,9 +754,9 @@ html, body {
 
 <script>
 // ===== DATA =====
-const DAYS = ['mon','tue','wed','thu','fri','sat'];
-const DAY_NAMES = { mon:'Mon', tue:'Tue', wed:'Wed', thu:'Thu', fri:'Fri', sat:'Sat' };
-const DAY_FULL = { mon:'Monday', tue:'Tuesday', wed:'Wednesday', thu:'Thursday', fri:'Friday', sat:'Saturday' };
+const DAYS = ['sun','mon','tue','wed','thu','fri','sat'];
+const DAY_NAMES = { sun:'Sun', mon:'Mon', tue:'Tue', wed:'Wed', thu:'Thu', fri:'Fri', sat:'Sat' };
+const DAY_FULL = { sun:'Sunday', mon:'Monday', tue:'Tuesday', wed:'Wednesday', thu:'Thursday', fri:'Friday', sat:'Saturday' };
 
 const SCHEDULE = {
   mon: [
@@ -867,6 +867,20 @@ const SCHEDULE = {
     { type:'meal', icon:'🍛', title:'Dinner', sub:'', start:'21:30', end:'22:00', section:'' },
     { type:'rest', icon:'🌙', title:'Wind Down', sub:'', start:'22:00', end:'22:45', section:'' },
     { type:'sleep', icon:'💤', title:'Sleep', sub:'', start:'22:45', end:'06:00', section:'' },
+  ],
+  sun: [
+    { type:'rest', icon:'🏠', title:'House Work', sub:'Morning chores & family time', start:'06:00', end:'10:00', section:'Morning' },
+    { type:'meal', icon:'🥣', title:'Breakfast', sub:'Proper meal after morning work', start:'10:00', end:'10:30', section:'Free Time' },
+    { type:'rest', icon:'😌', title:'Relax / Personal Time', sub:'You deserve it!', start:'10:30', end:'11:30', section:'' },
+    { type:'study', icon:'📘', title:'Study Block 1', sub:'Catch up on weak subjects', start:'11:30', end:'13:00', section:'' },
+    { type:'meal', icon:'🍽️', title:'Lunch', sub:'', start:'13:00', end:'13:45', section:'Afternoon' },
+    { type:'rest', icon:'💤', title:'Afternoon Nap / Rest', sub:'Recharge fully', start:'13:45', end:'14:30', section:'' },
+    { type:'study', icon:'💻', title:'Study Block 2', sub:'Python practice / assignments / PBL', start:'14:30', end:'16:30', section:'' },
+    { type:'rest', icon:'🎮', title:'Free Time', sub:'Games, music, whatever you enjoy', start:'16:30', end:'18:00', section:'Evening' },
+    { type:'study', icon:'📋', title:'Weekly Prep', sub:'Pack bag, plan Monday, review notes', start:'18:00', end:'19:00', section:'' },
+    { type:'meal', icon:'🍛', title:'Dinner', sub:'', start:'19:00', end:'19:30', section:'' },
+    { type:'rest', icon:'🌙', title:'Wind Down', sub:'No screens, early to bed', start:'19:30', end:'22:00', section:'' },
+    { type:'sleep', icon:'💤', title:'Sleep', sub:'Early night — big week ahead!', start:'22:00', end:'06:00', section:'' },
   ]
 };
 
@@ -892,7 +906,7 @@ let isDark = true;
 // ===== INIT =====
 function init() {
   // Set today
-  const jsDayMap = [null,'mon','tue','wed','thu','fri','sat','mon']; // sun→mon fallback
+  const jsDayMap = ['sun','mon','tue','wed','thu','fri','sat'];
   const jsDay = new Date().getDay();
   const todayKey = jsDayMap[jsDay] || 'mon';
   currentDay = todayKey;
@@ -914,7 +928,7 @@ function init() {
 // ===== DAY STRIP =====
 function renderDayStrip() {
   const strip = document.getElementById('dayStrip');
-  const jsDayMap = [null,'mon','tue','wed','thu','fri','sat','mon'];
+  const jsDayMap = ['sun','mon','tue','wed','thu','fri','sat'];
   const todayKey = jsDayMap[new Date().getDay()] || 'mon';
 
   strip.innerHTML = DAYS.map(d => `
@@ -942,7 +956,7 @@ function toMins(t) {
 function renderSchedule(day) {
   const now = new Date();
   const currentMins = now.getHours() * 60 + now.getMinutes();
-  const jsDayMap = [null,'mon','tue','wed','thu','fri','sat','mon'];
+  const jsDayMap = ['sun','mon','tue','wed','thu','fri','sat'];
   const todayKey = jsDayMap[now.getDay()] || 'mon';
   const isToday = day === todayKey;
 
@@ -1145,7 +1159,7 @@ function closeNotif() {
 }
 
 function scheduleNotifications() {
-  const jsDayMap = [null,'mon','tue','wed','thu','fri','sat','mon'];
+  const jsDayMap = ['sun','mon','tue','wed','thu','fri','sat'];
   const todayKey = jsDayMap[new Date().getDay()] || 'mon';
   const slots = SCHEDULE[todayKey];
   const now = new Date();
