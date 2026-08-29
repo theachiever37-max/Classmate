@@ -475,14 +475,16 @@ html, body {
   border-radius: 5px; letter-spacing: 1px; text-transform: uppercase;
   font-family: 'JetBrains Mono', monospace;
 }
-.hw-tag.mats { background: rgba(230,15,50,0.15); color: var(--red); }
-.hw-tag.ches { background: var(--green-soft); color: var(--green); }
-.hw-tag.etc  { background: var(--blue-soft); color: var(--blue2); }
-.hw-tag.esc  { background: var(--yellow-soft); color: var(--yellow); }
-.hw-tag.psc  { background: rgba(255,64,129,0.12); color: var(--pink); }
-.hw-tag.eng  { background: rgba(230,15,50,0.15); color: var(--red); }
-.hw-tag.ico  { background: var(--green-soft); color: var(--green); }
-.hw-tag.pbl  { background: var(--blue-soft); color: var(--blue2); }
+.hw-tag.mas31 { background: rgba(230,15,50,0.15); color: var(--red); }
+.hw-tag.csi32 { background: var(--green-soft); color: var(--green); }
+.hw-tag.cst33 { background: var(--blue-soft); color: var(--blue2); }
+.hw-tag.cst34 { background: var(--yellow-soft); color: var(--yellow); }
+.hw-tag.cst35 { background: rgba(255,64,129,0.12); color: var(--pink); }
+.hw-tag.csl36 { background: var(--blue-soft); color: var(--blue2); }
+.hw-tag.csl37 { background: var(--green-soft); color: var(--green); }
+.hw-tag.csp38 { background: var(--yellow-soft); color: var(--yellow); }
+.hw-tag.nss39 { background: rgba(255,64,129,0.12); color: var(--pink); }
+.hw-tag.csl310 { background: rgba(230,15,50,0.15); color: var(--red); }
 .hw-tag.other { background: var(--surface2); color: var(--text2); }
 
 .hw-due { font-size: 10px; color: var(--text2); font-family: 'JetBrains Mono', monospace; }
@@ -732,7 +734,7 @@ html, body {
       <div class="logo-spider">🕷️</div>
       <div>
         <div class="app-name">ClassMate</div>
-        <div class="app-sub" id="headerSub">B/CSE · SEM II</div>
+        <div class="app-sub" id="headerSub">III-B · CSE</div>
       </div>
     </div>
     <div class="header-actions">
@@ -785,10 +787,11 @@ html, body {
         <div class="filter-chip active" onclick="filterHW('all',this)">ALL</div>
         <div class="filter-chip" onclick="filterHW('pending',this)">PENDING</div>
         <div class="filter-chip" onclick="filterHW('done',this)">DONE</div>
-        <div class="filter-chip" onclick="filterHW('mats',this)">MATHS</div>
-        <div class="filter-chip" onclick="filterHW('ches',this)">CHEM</div>
-        <div class="filter-chip" onclick="filterHW('psc',this)">PYTHON</div>
-        <div class="filter-chip" onclick="filterHW('etc',this)">AI</div>
+        <div class="filter-chip" onclick="filterHW('mas31',this)">MAS31</div>
+        <div class="filter-chip" onclick="filterHW('csi32',this)">CSI32</div>
+        <div class="filter-chip" onclick="filterHW('cst33',this)">CST33</div>
+        <div class="filter-chip" onclick="filterHW('cst34',this)">CST34</div>
+        <div class="filter-chip" onclick="filterHW('cst35',this)">CST35</div>
       </div>
       <div class="hw-list" id="hwList"></div>
     </div>
@@ -797,7 +800,7 @@ html, body {
     <div class="page" id="page-subjects">
       <div style="padding: 18px 16px 6px;">
         <div class="page-title">SUBJECTS</div>
-        <div style="font-size: 11px; color: var(--text2); margin-top: 4px; font-family:'JetBrains Mono',monospace; letter-spacing:1px;">SEM II · CHEMISTRY CYCLE</div>
+        <div style="font-size: 11px; color: var(--text2); margin-top: 4px; font-family:'JetBrains Mono',monospace; letter-spacing:1px;">SEM III-B · CSE 2025-26</div>
       </div>
       <div class="subjects-grid" id="subjectGrid"></div>
     </div>
@@ -829,19 +832,21 @@ html, body {
     <div class="modal-title">ADD TASK</div>
     <div class="form-group">
       <label class="form-label">Task / Assignment</label>
-      <input class="form-input" id="hwTaskInput" type="text" placeholder="e.g. Complete Calculus assignment">
+      <input class="form-input" id="hwTaskInput" type="text" placeholder="e.g. Complete OS assignment">
     </div>
     <div class="form-group">
       <label class="form-label">Subject</label>
       <select class="form-select" id="hwSubjectSelect">
-        <option value="mats">25MATS21 – Advanced Calculus</option>
-        <option value="ches">25CHES22 – Applied Chemistry</option>
-        <option value="etc">25ETC23 – Intro to AI</option>
-        <option value="esc">25ESC243 – Electronics & Comm</option>
-        <option value="psc">25PSC251 – Python Programming</option>
-        <option value="eng">25ENG262 – Communication Skills</option>
-        <option value="ico">25ICO27 – Indian Constitution</option>
-        <option value="pbl">25PBL28 – Project Based Learning</option>
+        <option value="mas31">25MAS31 – Probability, Distributions & Statistics</option>
+        <option value="csi32">25CSI32 – Object Oriented Programming With Java</option>
+        <option value="cst33">25CST33 – Operating Systems</option>
+        <option value="cst34">25CST34 – Data Structures And Applications</option>
+        <option value="cst35">25CST35 – Digital Design And Computer Organization</option>
+        <option value="csl36">25CSL36 – Data Structures And Laboratory</option>
+        <option value="csl37">25CSL37 – Version Control With Git & GitHub</option>
+        <option value="csp38">25CSP38 – Community/Societal Project</option>
+        <option value="nss39">NSS/PE/Music/Yoga</option>
+        <option value="csl310">25CSL310 – Skill Lab: Industry Readiness-I</option>
         <option value="other">Other</option>
       </select>
     </div>
@@ -925,89 +930,84 @@ const DAY_FULL = { sun:'Sunday', mon:'Monday', tue:'Tuesday', wed:'Wednesday', t
 const SCHEDULE = {
   mon: [
     { type:'travel', icon:'🚌', title:'Commute to College', sub:'Pack bag, hit the road', start:'07:00', end:'08:50', section:'Morning' },
-    { type:'college', icon:'🗣️', title:'25ENG262 – Communication Skills', sub:'Mrs. Anuradha T V · Period 1', start:'09:00', end:'09:55', section:'College' },
-    { type:'college', icon:'📐', title:'25MATS21 – Advanced Calculus', sub:'Mrs. Mala K K · Period 2', start:'09:55', end:'10:50', section:'' },
+    { type:'college', icon:'🛠️', title:'Skill Activity (25CSL310)', sub:'Skill Lab: Industry Readiness-I · Periods 1 & 2', start:'09:00', end:'10:50', section:'College' },
     { type:'break', icon:'☕', title:'Tea Break', sub:'', start:'10:50', end:'11:00', section:'' },
-    { type:'college', icon:'📡', title:'25ESC243 – Electronics & Comm', sub:'Mr. Manjunath M N · Period 3', start:'11:00', end:'11:55', section:'' },
-    { type:'college', icon:'🤖', title:'25ETC23 – Intro to AI', sub:'Dr. Sathya Prakash · Period 4', start:'11:55', end:'12:50', section:'' },
-    { type:'meal', icon:'🍽️', title:'Lunch Break', sub:'Eat well, short walk', start:'12:50', end:'13:40', section:'Afternoon' },
-    { type:'break', icon:'📖', title:'Free Period / Library', sub:'Period 5 – self study or rest', start:'13:40', end:'14:30', section:'' },
-    { type:'college', icon:'🐍', title:'25PSC251 – Python Programming', sub:'Mr. Vijaykumar G R · Period 6', start:'14:30', end:'15:20', section:'' },
-    { type:'college', icon:'🐍', title:'25PSC251 – Python Programming', sub:'Mr. Vijaykumar G R · Period 7', start:'15:20', end:'16:10', section:'' },
+    { type:'college', icon:'🖥️', title:'25CST35 – Digital Design & Computer Organization', sub:'Prof. Swathi N · Period 3', start:'11:00', end:'11:55', section:'' },
+    { type:'meal', icon:'🍽️', title:'Lunch Break', sub:'Eat well, short walk', start:'11:55', end:'12:50', section:'Afternoon' },
+    { type:'college', icon:'🖧', title:'25CST33 – Operating Systems', sub:'Prof. Vinit Shukla · Period 4', start:'12:50', end:'13:40', section:'' },
+    { type:'college', icon:'📊', title:'25MAS31 – Probability, Distributions & Statistics', sub:'Prof. Ashwini R H · Period 5', start:'13:40', end:'14:30', section:'' },
+    { type:'college', icon:'🧩', title:'25CST34 – Data Structures And Applications', sub:'Dr. Bhargav R · Periods 6 & 7', start:'14:30', end:'16:10', section:'' },
     { type:'travel', icon:'🏠', title:'Commute Back Home', sub:'Decompress, music or podcast', start:'16:10', end:'18:30', section:'Evening' },
     { type:'meal', icon:'🥤', title:'Freshen Up + Snack', sub:'', start:'18:30', end:'19:00', section:'' },
     { type:'rest', icon:'😌', title:'Unwind / Rest', sub:'No screens. Recharge.', start:'19:00', end:'19:30', section:'' },
-    { type:'study', icon:'📘', title:'Study Block 1', sub:'Calculus + AI notes review', start:'19:30', end:'21:00', section:'' },
-    { type:'study', icon:'💻', title:'Study Block 2', sub:'Python practice / assignments', start:'21:00', end:'21:45', section:'' },
+    { type:'study', icon:'📘', title:'Study Block 1', sub:'OS + Data Structures review', start:'19:30', end:'21:00', section:'' },
+    { type:'study', icon:'💻', title:'Study Block 2', sub:'Java OOP practice', start:'21:00', end:'21:45', section:'' },
     { type:'meal', icon:'🍛', title:'Dinner', sub:'', start:'21:45', end:'22:15', section:'' },
     { type:'rest', icon:'🌙', title:'Wind Down', sub:'Journal, light reading, no phone', start:'22:15', end:'22:45', section:'' },
     { type:'sleep', icon:'💤', title:'Sleep', sub:'7h 15m — protect this', start:'22:45', end:'06:00', section:'' },
   ],
   tue: [
     { type:'travel', icon:'🚌', title:'Commute to College', sub:'', start:'07:00', end:'08:50', section:'Morning' },
-    { type:'college', icon:'🤖', title:'25ETC23 – Intro to AI', sub:'Dr. Sathya Prakash · Period 1', start:'09:00', end:'09:55', section:'College' },
-    { type:'college', icon:'📡', title:'25ESC243 – Electronics & Comm', sub:'Mr. Manjunath M N · Period 2', start:'09:55', end:'10:50', section:'' },
+    { type:'college', icon:'🛠️', title:'Skill Activity (25CSL310)', sub:'Skill Lab: Industry Readiness-I · Periods 1 & 2', start:'09:00', end:'10:50', section:'College' },
     { type:'break', icon:'☕', title:'Tea Break', sub:'', start:'10:50', end:'11:00', section:'' },
-    { type:'lab', icon:'🔬', title:'25MATS21 Lab (2 hrs)', sub:'Mrs. Mala K K · Periods 3 & 4', start:'11:00', end:'12:50', section:'' },
-    { type:'meal', icon:'🍽️', title:'Lunch Break', sub:'', start:'12:50', end:'13:40', section:'Afternoon' },
-    { type:'break', icon:'📖', title:'Free Period', sub:'Rest or self study', start:'13:40', end:'14:30', section:'' },
-    { type:'college', icon:'🐍', title:'25PSC251 – Python Programming', sub:'Mr. Vijaykumar G R · Period 6', start:'14:30', end:'15:20', section:'' },
-    { type:'college', icon:'🐍', title:'25PSC251 – Python Programming', sub:'Period 7', start:'15:20', end:'16:10', section:'' },
+    { type:'college', icon:'🖥️', title:'25CST35 – Digital Design & Computer Organization', sub:'Prof. Swathi N · Period 3', start:'11:00', end:'11:55', section:'' },
+    { type:'meal', icon:'🍽️', title:'Lunch Break', sub:'', start:'11:55', end:'12:50', section:'Afternoon' },
+    { type:'college', icon:'📊', title:'25MAS31 – Probability, Distributions & Statistics', sub:'Prof. Ashwini R H · Period 4', start:'12:50', end:'13:40', section:'' },
+    { type:'college', icon:'🗣️', title:'Counselling', sub:'Period 5', start:'13:40', end:'14:30', section:'' },
+    { type:'lab', icon:'🧪', title:'25CSL36 Lab – Data Structures And Laboratory', sub:'Dr. Bhargav R · Periods 6 & 7', start:'14:30', end:'16:10', section:'' },
     { type:'travel', icon:'🏠', title:'Commute Back Home', sub:'', start:'16:10', end:'18:30', section:'Evening' },
     { type:'meal', icon:'🥤', title:'Freshen Up + Snack', sub:'', start:'18:30', end:'19:00', section:'' },
     { type:'rest', icon:'😌', title:'Unwind / Rest', sub:'', start:'19:00', end:'19:30', section:'' },
-    { type:'study', icon:'📘', title:'Study Block 1', sub:'Maths Lab work + ECE notes', start:'19:30', end:'21:00', section:'' },
-    { type:'study', icon:'💻', title:'Study Block 2', sub:'Python programs practice', start:'21:00', end:'21:45', section:'' },
+    { type:'study', icon:'📘', title:'Study Block 1', sub:'Stats + Digital Design revision', start:'19:30', end:'21:00', section:'' },
+    { type:'study', icon:'💻', title:'Study Block 2', sub:'Data Structures lab record', start:'21:00', end:'21:45', section:'' },
     { type:'meal', icon:'🍛', title:'Dinner', sub:'', start:'21:45', end:'22:15', section:'' },
     { type:'rest', icon:'🌙', title:'Wind Down', sub:'', start:'22:15', end:'22:45', section:'' },
     { type:'sleep', icon:'💤', title:'Sleep', sub:'7h 15m', start:'22:45', end:'06:00', section:'' },
   ],
   wed: [
     { type:'travel', icon:'🚌', title:'Commute to College', sub:'', start:'07:00', end:'08:50', section:'Morning' },
-    { type:'lab', icon:'⚗️', title:'25CHES22 Lab B1 / 25PBL28 Lab B2', sub:'Dr. Manohar P / Dr. Sathya Prakash · Periods 1&2', start:'09:00', end:'10:50', section:'College' },
+    { type:'college', icon:'📊', title:'25MAS31 – Probability, Distributions & Statistics', sub:'Prof. Ashwini R H · Period 1', start:'09:00', end:'09:55', section:'College' },
+    { type:'college', icon:'🖥️', title:'25CST35 – Digital Design & Computer Organization', sub:'Prof. Swathi N · Period 2', start:'09:55', end:'10:50', section:'' },
     { type:'break', icon:'☕', title:'Tea Break', sub:'', start:'10:50', end:'11:00', section:'' },
-    { type:'college', icon:'📡', title:'25ESC243 – Electronics & Comm', sub:'Mr. Manjunath M N · Period 3', start:'11:00', end:'11:55', section:'' },
-    { type:'college', icon:'⚗️', title:'25CHES22 – Applied Chemistry', sub:'Dr. Manohar P · Period 4', start:'11:55', end:'12:50', section:'' },
-    { type:'meal', icon:'🍽️', title:'Lunch Break', sub:'', start:'12:50', end:'13:40', section:'Afternoon' },
-    { type:'break', icon:'📖', title:'Free Period', sub:'', start:'13:40', end:'14:30', section:'' },
-    { type:'college', icon:'🐍', title:'25PSC251 – Python Programming', sub:'Mr. Vijaykumar G R · Period 6', start:'14:30', end:'15:20', section:'' },
-    { type:'college', icon:'🐍', title:'25PSC251 – Python Programming', sub:'Period 7', start:'15:20', end:'16:10', section:'' },
+    { type:'college', icon:'🖧', title:'25CST33 – Operating Systems', sub:'Prof. Vinit Shukla · Period 3', start:'11:00', end:'11:55', section:'' },
+    { type:'meal', icon:'🍽️', title:'Lunch Break', sub:'', start:'11:55', end:'12:50', section:'Afternoon' },
+    { type:'club', icon:'🧘', title:'NSS / PE / Music / Yoga', sub:'Prof. Amarnath J L · Period 4', start:'12:50', end:'13:40', section:'' },
+    { type:'lab', icon:'🌾', title:'25CSP38 – Community/Societal Project', sub:'Dr. Raghavendra Patil G E · Periods 5, 6 & 7', start:'13:40', end:'16:10', section:'' },
     { type:'travel', icon:'🏠', title:'Commute Back Home', sub:'', start:'16:10', end:'18:30', section:'Evening' },
     { type:'meal', icon:'🥤', title:'Freshen Up + Snack', sub:'', start:'18:30', end:'19:00', section:'' },
     { type:'rest', icon:'😌', title:'Unwind / Rest', sub:'', start:'19:00', end:'19:30', section:'' },
-    { type:'study', icon:'📘', title:'Study Block 1', sub:'Chemistry lab record + ECE revision', start:'19:30', end:'21:00', section:'' },
-    { type:'study', icon:'💻', title:'Study Block 2', sub:'Python / PBL project work', start:'21:00', end:'21:45', section:'' },
+    { type:'study', icon:'📘', title:'Study Block 1', sub:'OS theory + project work', start:'19:30', end:'21:00', section:'' },
+    { type:'study', icon:'💻', title:'Study Block 2', sub:'Stats problems practice', start:'21:00', end:'21:45', section:'' },
     { type:'meal', icon:'🍛', title:'Dinner', sub:'', start:'21:45', end:'22:15', section:'' },
     { type:'rest', icon:'🌙', title:'Wind Down', sub:'', start:'22:15', end:'22:45', section:'' },
     { type:'sleep', icon:'💤', title:'Sleep', sub:'', start:'22:45', end:'06:00', section:'' },
   ],
   thu: [
     { type:'travel', icon:'🚌', title:'Commute to College', sub:'', start:'07:00', end:'08:50', section:'Morning' },
-    { type:'college', icon:'⚗️', title:'25CHES22 – Applied Chemistry', sub:'Dr. Manohar P · Period 1', start:'09:00', end:'09:55', section:'College' },
-    { type:'college', icon:'🤖', title:'25ETC23 – Intro to AI', sub:'Dr. Sathya Prakash · Period 2', start:'09:55', end:'10:50', section:'' },
+    { type:'college', icon:'🧩', title:'25CST34 – Data Structures And Applications', sub:'Dr. Bhargav R · Periods 1 & 2', start:'09:00', end:'10:50', section:'College' },
     { type:'break', icon:'☕', title:'Tea Break', sub:'', start:'10:50', end:'11:00', section:'' },
-    { type:'college', icon:'📐', title:'25MATS21 – Advanced Calculus', sub:'Mrs. Mala K K · Period 3', start:'11:00', end:'11:55', section:'' },
-    { type:'college', icon:'🗣️', title:'25ENG262 – Communication Skills', sub:'Mrs. Anuradha T V · Period 4', start:'11:55', end:'12:50', section:'' },
-    { type:'meal', icon:'🍽️', title:'Lunch Break', sub:'', start:'12:50', end:'13:40', section:'Afternoon' },
-    { type:'club', icon:'🎯', title:'Club Activity', sub:'Periods 5, 6 & 7', start:'13:40', end:'16:10', section:'' },
+    { type:'college', icon:'☕', title:'25CSI32 – Object Oriented Programming With Java', sub:'Prof. Abraham Rajan · Period 3', start:'11:00', end:'11:55', section:'' },
+    { type:'meal', icon:'🍽️', title:'Lunch Break', sub:'', start:'11:55', end:'12:50', section:'Afternoon' },
+    { type:'college', icon:'☕', title:'25CSI32 – Object Oriented Programming With Java', sub:'Prof. Abraham Rajan · Periods 4 & 5', start:'12:50', end:'14:30', section:'' },
+    { type:'club', icon:'🎯', title:'Club Activity', sub:'Periods 6 & 7', start:'14:30', end:'16:10', section:'' },
     { type:'travel', icon:'🏠', title:'Commute Back Home', sub:'', start:'16:10', end:'18:30', section:'Evening' },
     { type:'meal', icon:'🥤', title:'Freshen Up + Snack', sub:'', start:'18:30', end:'19:00', section:'' },
     { type:'rest', icon:'😌', title:'Unwind / Rest', sub:'', start:'19:00', end:'19:30', section:'' },
-    { type:'study', icon:'📘', title:'Study Block 1', sub:'Calculus problems + Chemistry theory', start:'19:30', end:'21:00', section:'' },
-    { type:'study', icon:'💻', title:'Study Block 2', sub:'AI notes + weekly revision', start:'21:00', end:'21:45', section:'' },
+    { type:'study', icon:'📘', title:'Study Block 1', sub:'Java OOP + Data Structures', start:'19:30', end:'21:00', section:'' },
+    { type:'study', icon:'💻', title:'Study Block 2', sub:'Weekly revision', start:'21:00', end:'21:45', section:'' },
     { type:'meal', icon:'🍛', title:'Dinner', sub:'', start:'21:45', end:'22:15', section:'' },
     { type:'rest', icon:'🌙', title:'Wind Down', sub:'', start:'22:15', end:'22:45', section:'' },
     { type:'sleep', icon:'💤', title:'Sleep', sub:'', start:'22:45', end:'06:00', section:'' },
   ],
   fri: [
     { type:'travel', icon:'🚌', title:'Commute to College', sub:'', start:'07:00', end:'08:50', section:'Morning' },
-    { type:'college', icon:'⚖️', title:'25ICO27 – Indian Constitution & Ethics', sub:'Ms. Varuna Gangadhar · Period 1', start:'09:00', end:'09:55', section:'College' },
-    { type:'college', icon:'📐', title:'25MATS21 – Advanced Calculus', sub:'Mrs. Mala K K · Period 2', start:'09:55', end:'10:50', section:'' },
+    { type:'lab', icon:'🔧', title:'25CSL37 Lab 2 – Version Control With Git & GitHub', sub:'Prof. Vinith Kumar / Swathi N / Likitha N / Amarnath J L · Periods 1 & 2', start:'09:00', end:'10:50', section:'College' },
     { type:'break', icon:'☕', title:'Tea Break', sub:'', start:'10:50', end:'11:00', section:'' },
-    { type:'college', icon:'⚗️', title:'25CHES22 – Applied Chemistry', sub:'Dr. Manohar P · Periods 3 & 4', start:'11:00', end:'12:50', section:'' },
-    { type:'meal', icon:'🍽️', title:'Lunch Break', sub:'', start:'12:50', end:'13:40', section:'Afternoon' },
-    { type:'break', icon:'📖', title:'Free Period', sub:'', start:'13:40', end:'14:30', section:'' },
-    { type:'lab', icon:'⚗️', title:'25CHES22 Lab B2 / 25PBL28 Lab B1', sub:'Periods 6 & 7', start:'14:30', end:'16:10', section:'' },
+    { type:'college', icon:'🖧', title:'25CST33 – Operating Systems', sub:'Prof. Vinit Shukla · Period 3', start:'11:00', end:'11:55', section:'' },
+    { type:'meal', icon:'🍽️', title:'Lunch Break', sub:'', start:'11:55', end:'12:50', section:'Afternoon' },
+    { type:'college', icon:'🖥️', title:'25CST35 – Digital Design & Computer Organization', sub:'Prof. Swathi N · Period 4', start:'12:50', end:'13:40', section:'' },
+    { type:'college', icon:'📊', title:'25MAS31 – Probability, Distributions & Statistics', sub:'Prof. Ashwini R H · Period 5', start:'13:40', end:'14:30', section:'' },
+    { type:'lab', icon:'☕', title:'25CSI32 Lab – Object Oriented Programming With Java', sub:'Prof. Abraham Rajan · Periods 6 & 7', start:'14:30', end:'16:10', section:'' },
     { type:'travel', icon:'🏠', title:'Commute Back Home', sub:'', start:'16:10', end:'18:30', section:'Evening' },
     { type:'meal', icon:'🥤', title:'Freshen Up + Snack', sub:'', start:'18:30', end:'19:00', section:'' },
     { type:'rest', icon:'🎮', title:'Longer Unwind — TGIF', sub:'You earned it. Leisure time.', start:'19:00', end:'20:00', section:'' },
@@ -1017,20 +1017,17 @@ const SCHEDULE = {
     { type:'sleep', icon:'💤', title:'Sleep', sub:'Slight extra on Friday', start:'23:00', end:'06:30', section:'' },
   ],
   sat: [
-    { type:'travel', icon:'🚌', title:'Commute to College', sub:'No holiday – rotating schedule', start:'07:00', end:'08:50', section:'Morning' },
-    { type:'college', icon:'📋', title:'Periods 1 & 2', sub:"Check which day's rotation is used", start:'09:00', end:'10:50', section:'College' },
-    { type:'break', icon:'☕', title:'Tea Break', sub:'', start:'10:50', end:'11:00', section:'' },
-    { type:'college', icon:'📋', title:'Periods 3 & 4', sub:'As per rotating timetable', start:'11:00', end:'12:50', section:'' },
-    { type:'meal', icon:'🍽️', title:'Lunch Break', sub:'', start:'12:50', end:'13:40', section:'Afternoon' },
-    { type:'break', icon:'📖', title:'Free Period', sub:'', start:'13:40', end:'14:30', section:'' },
-    { type:'college', icon:'📋', title:'Periods 6 & 7', sub:'As per rotating timetable', start:'14:30', end:'16:10', section:'' },
-    { type:'travel', icon:'🏠', title:'Commute Back Home', sub:'', start:'16:10', end:'18:30', section:'Evening' },
-    { type:'meal', icon:'🥤', title:'Freshen Up + Snack', sub:'', start:'18:30', end:'19:00', section:'' },
-    { type:'rest', icon:'😮‍💨', title:'True Rest', sub:"You made it through the week!", start:'19:00', end:'19:45', section:'' },
-    { type:'study', icon:'📘', title:'Deep Study / Backlog Clear', sub:'Assignments, records, catch up', start:'19:45', end:'21:30', section:'' },
-    { type:'meal', icon:'🍛', title:'Dinner', sub:'', start:'21:30', end:'22:00', section:'' },
-    { type:'rest', icon:'🌙', title:'Wind Down', sub:'', start:'22:00', end:'22:45', section:'' },
-    { type:'sleep', icon:'💤', title:'Sleep', sub:'', start:'22:45', end:'06:00', section:'' },
+    { type:'rest', icon:'😮‍💨', title:'Free Morning', sub:'No classes scheduled today', start:'07:00', end:'10:00', section:'Morning' },
+    { type:'meal', icon:'🥣', title:'Breakfast / Brunch', sub:'', start:'10:00', end:'10:30', section:'' },
+    { type:'study', icon:'📘', title:'Study Block 1', sub:'Backlog clearing, assignments', start:'10:30', end:'13:00', section:'' },
+    { type:'meal', icon:'🍽️', title:'Lunch', sub:'', start:'13:00', end:'13:45', section:'Afternoon' },
+    { type:'rest', icon:'😌', title:'Afternoon Rest', sub:'', start:'13:45', end:'14:30', section:'' },
+    { type:'study', icon:'💻', title:'Study Block 2', sub:'Lab records / project work', start:'14:30', end:'16:30', section:'' },
+    { type:'rest', icon:'🎮', title:'Free Time', sub:'Games, music, whatever you enjoy', start:'16:30', end:'18:00', section:'Evening' },
+    { type:'study', icon:'📋', title:'Weekly Prep', sub:'Pack bag, plan Monday, review notes', start:'18:00', end:'19:00', section:'' },
+    { type:'meal', icon:'🍛', title:'Dinner', sub:'', start:'19:00', end:'19:30', section:'' },
+    { type:'rest', icon:'🌙', title:'Wind Down', sub:'', start:'19:30', end:'22:00', section:'' },
+    { type:'sleep', icon:'💤', title:'Sleep', sub:'', start:'22:00', end:'06:00', section:'' },
   ],
   sun: [
     { type:'rest', icon:'🏠', title:'House Work', sub:'Morning chores & family time', start:'06:00', end:'10:00', section:'Morning' },
@@ -1039,7 +1036,7 @@ const SCHEDULE = {
     { type:'study', icon:'📘', title:'Study Block 1', sub:'Catch up on weak subjects', start:'11:30', end:'13:00', section:'' },
     { type:'meal', icon:'🍽️', title:'Lunch', sub:'', start:'13:00', end:'13:45', section:'Afternoon' },
     { type:'rest', icon:'💤', title:'Afternoon Nap / Rest', sub:'Recharge fully', start:'13:45', end:'14:30', section:'' },
-    { type:'study', icon:'💻', title:'Study Block 2', sub:'Python practice / assignments / PBL', start:'14:30', end:'16:30', section:'' },
+    { type:'study', icon:'💻', title:'Study Block 2', sub:'Java OOP / OS practice / project work', start:'14:30', end:'16:30', section:'' },
     { type:'rest', icon:'🎮', title:'Free Time', sub:'Games, music, whatever you enjoy', start:'16:30', end:'18:00', section:'Evening' },
     { type:'study', icon:'📋', title:'Weekly Prep', sub:'Pack bag, plan Monday, review notes', start:'18:00', end:'19:00', section:'' },
     { type:'meal', icon:'🍛', title:'Dinner', sub:'', start:'19:00', end:'19:30', section:'' },
@@ -1049,17 +1046,19 @@ const SCHEDULE = {
 };
 
 const SUBJECTS = [
-  { code:'25MATS21', name:'Advanced Calculus & Numerical Methods', faculty:'Mrs. Mala K K', credits:4, tag:'mats' },
-  { code:'25CHES22', name:'Applied Chemistry for Smart Systems', faculty:'Dr. Manohar P', credits:4, tag:'ches' },
-  { code:'25ETC23', name:'Introduction to AI & Applications', faculty:'Dr. Sathya Prakash', credits:3, tag:'etc' },
-  { code:'25ESC243', name:'Introduction to Electronics & Comm Engg', faculty:'Mr. Manjunath M N', credits:3, tag:'esc' },
-  { code:'25PSC251', name:'Python Programming', faculty:'Mr. Vijaykumar G R', credits:4, tag:'psc' },
-  { code:'25ENG262', name:'Communication Skills', faculty:'Mrs. Anuradha T V', credits:1, tag:'eng' },
-  { code:'25ICO27', name:'Indian Constitution & Engg Ethics', faculty:'Ms. Varuna Gangadhar', credits:0, tag:'ico' },
-  { code:'25PBL28', name:'Project-Based Learning', faculty:'Dr. Sathya Prakash / Mr. Praveen Mourya', credits:1, tag:'pbl' },
+  { code:'25MAS31', name:'Probability, Distributions And Statistics', faculty:'Prof. Ashwini R H', credits:4, tag:'mas31' },
+  { code:'25CSI32', name:'Object Oriented Programming With Java', faculty:'Prof. Abraham Rajan', credits:4, tag:'csi32' },
+  { code:'25CST33', name:'Operating Systems', faculty:'Prof. Vinit Shukla', credits:3, tag:'cst33' },
+  { code:'25CST34', name:'Data Structures And Applications', faculty:'Dr. Bhargav R', credits:3, tag:'cst34' },
+  { code:'25CST35', name:'Digital Design And Computer Organization', faculty:'Prof. Swathi N', credits:4, tag:'cst35' },
+  { code:'25CSL36', name:'Data Structures And Laboratory', faculty:'Dr. Bhargav R', credits:1, tag:'csl36' },
+  { code:'25CSL37', name:'Version Control With Git & GitHub', faculty:'Prof. Vinith Kumar, Prof. Swathi N, Prof. Likitha N, Prof. Amarnath J L', credits:1, tag:'csl37' },
+  { code:'25CSP38', name:'Community Project / Societal Project', faculty:'Dr. Raghavendra Patil G E', credits:1, tag:'csp38' },
+  { code:'25NSS/PE/MUK/YOG39', name:'NSS / PE / Music / Yoga', faculty:'Prof. Amarnath J L', credits:0, tag:'nss39' },
+  { code:'25CSL310', name:'Skill Lab: Industry Readiness-I', faculty:'TBA', credits:1, tag:'csl310' },
 ];
 
-const SUB_COLORS = { mats:'#e60f32', ches:'#00e676', etc:'#4488ff', esc:'#ffd600', psc:'#ff4081', eng:'#e60f32', ico:'#00e676', pbl:'#4488ff', other:'#44445a' };
+const SUB_COLORS = { mas31:'#e60f32', csi32:'#00e676', cst33:'#4488ff', cst34:'#ffd600', cst35:'#ff4081', csl36:'#4488ff', csl37:'#00e676', csp38:'#ffd600', nss39:'#ff4081', csl310:'#e60f32', other:'#44445a' };
 
 // ===== STATE =====
 let currentDay = 'mon';
@@ -1345,7 +1344,7 @@ init();
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    const sw = `const C='classmate-v2';self.addEventListener('install',e=>{self.skipWaiting()});self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x)))))});self.addEventListener('fetch',e=>{e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request)))});`;
+    const sw = `const C='classmate-v3';self.addEventListener('install',e=>{self.skipWaiting()});self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x)))))});self.addEventListener('fetch',e=>{e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request)))});`;
     const blob = new Blob([sw], {type:'application/javascript'});
     navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(()=>{});
   });
